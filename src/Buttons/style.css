@@ -1,0 +1,28 @@
+.buttons {
+    display: grid;
+    grid-template-columns: auto auto;
+    border: none;
+    background-color: inherit;
+    color: hsl(180, 100%, 25%);
+    margin-top: 15px;
+}
+
+.buttons:hover {
+    color: hsl(180, 100%, 30%);
+    transition: 0.5s;
+}
+
+.buttons:active {
+    color: hsl(180, 100%, 35%);
+    transition: 0.5s;
+}
+
+.buttons:disabled {
+    color: hsl(0, 0%, 50%);
+}
+
+@media (max-width:767px) {
+    .buttons {
+        grid-template-columns: 1fr;
+    }
+}
