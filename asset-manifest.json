@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/KrystianLewalski/todolist-react.git/static/css/main.641122fa.css",
+    "main.js": "/KrystianLewalski/todolist-react.git/static/js/main.3d542965.js",
+    "static/js/787.17f4b47e.chunk.js": "/KrystianLewalski/todolist-react.git/static/js/787.17f4b47e.chunk.js",
+    "index.html": "/KrystianLewalski/todolist-react.git/index.html",
+    "main.641122fa.css.map": "/KrystianLewalski/todolist-react.git/static/css/main.641122fa.css.map",
+    "main.3d542965.js.map": "/KrystianLewalski/todolist-react.git/static/js/main.3d542965.js.map",
+    "787.17f4b47e.chunk.js.map": "/KrystianLewalski/todolist-react.git/static/js/787.17f4b47e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.641122fa.css",
+    "static/js/main.3d542965.js"
+  ]
+}
