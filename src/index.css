@@ -4,9 +4,3 @@ html {
   margin: 0 auto;
 }
 
-.body {
-  font-family: 'Open Sans', sans-serif;
-  word-break: break-word;
-  padding: 20px;
-  background-color:hsl(0, 0%, 93%);
-}
