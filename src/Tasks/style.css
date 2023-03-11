@@ -9,7 +9,6 @@
     padding: 10px;
     grid-template-columns: auto 1fr auto;
     border-bottom: 1px solid #ddd;
-    align-self: center;
 }
 
 .list__item--done {
