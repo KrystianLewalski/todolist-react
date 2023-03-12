@@ -4,14 +4,14 @@
     box-shadow: 0 0 5px #ddd;
 }
 
-.section__legend {
+.section__header {
     display: grid;
     grid-template-columns: 1fr auto;
-    padding-top: 0;
+    padding: 20px;
     border-bottom: 1px solid hsl(0, 0%, 80%);
 }
 
-.section__header {
+.section__title {
     padding: 10px;
     margin-top: 15px;
 }

@@ -5,6 +5,7 @@
     background-color: inherit;
     color: hsl(180, 100%, 25%);
     margin-top: 15px;
+    cursor: pointer;
 }
 
 .buttons:hover {

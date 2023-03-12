@@ -6,9 +6,12 @@
 
 .list__item {
     display: grid;
-    padding: 10px;
     grid-template-columns: auto 1fr auto;
     border-bottom: 1px solid #ddd;
+}
+
+.list__item--element {
+    padding: 20px;
 }
 
 .list__item--done {
@@ -19,7 +22,7 @@
     display: none;
 }
 
-.list__button--add {
+.list__button--done {
     display: grid;
     align-self: center;
     padding: 7px;
@@ -31,12 +34,12 @@
     cursor: pointer;
 }
 
-.list__button--add:hover {
+.list__button--done:hover {
     background-color: hsl(103, 100%, 30%);
     transition: 0.5s;
 }
 
-.list__button--add:active {
+.list__button--done:active {
     background-color: hsl(103, 100%, 35%);
     transition: 0.5s;
 }

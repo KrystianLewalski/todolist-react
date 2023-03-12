@@ -1,4 +1,4 @@
-.body {
-    padding: 20px;
-    background-color:hsl(0, 0%, 93%);
-  }
+.container {
+  padding: 20px;
+  background-color: hsl(0, 0%, 93%);
+}
