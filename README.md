@@ -3,7 +3,7 @@
 This app will help you organise your every day.
 
 ## Demo
-![show demo](images/demo.gif)
+![show demo](public/images/demo.gif)
 https://krystianlewalski.github.io/todolist-react/
 
 ## Technology
