@@ -5,7 +5,6 @@ import Tasks from "./Tasks";
 import Section from "./Section";
 import Header from "./Header";
 import Container from "./Container";
-import "./index.css";
 
 function App() {
   const [hideDone, setHideDone] = useState(false)
@@ -54,33 +53,33 @@ function App() {
   };
 
   return (
-    <Container>
-      <Header title="Lista zadań" />
-      <Section
-        title="Dodaj nowe zadanie"
-        body={<Form addNewTask={addNewTask} />}
-      />
+      <Container>
+        <Header title="Lista zadań" />
+        <Section
+          title="Dodaj nowe zadanie"
+          body={<Form addNewTask={addNewTask} />}
+        />
 
-      <Section
-        title="Lista zadań"
-        body={
-          <Tasks
+        <Section
+          title="Lista zadań"
+          body={
+            <Tasks
+              tasks={tasks}
+              hideDone={hideDone}
+              removeTask={removeTask}
+              toggleTaskDone={toggleTaskDone}
+            />
+          }
+          extraHeaderContent=
+          {<Buttons
             tasks={tasks}
             hideDone={hideDone}
-            removeTask={removeTask}
-            toggleTaskDone={toggleTaskDone}
+            toggleHideDone={toggleHideDone}
+            setAllDone={setAllDone}
           />
-        }
-        extraHeaderContent=
-        {<Buttons
-          tasks={tasks}
-          hideDone={hideDone}
-          toggleHideDone={toggleHideDone}
-          setAllDone={setAllDone}
+          }
         />
-        }
-      />
-    </Container>
+      </Container>
   );
 }
 
