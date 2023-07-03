@@ -1,85 +1,55 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Buttons from "./Buttons";
 import Form from "./Form";
 import Tasks from "./Tasks";
 import Section from "./Section";
 import Header from "./Header";
 import Container from "./Container";
+import { useTasks } from "./useTasks";
 
 function App() {
   const [hideDone, setHideDone] = useState(false)
-  const [tasks, setTasks] = useState(
-    JSON.parse(localStorage.getItem("tasks")) || []
-  );
-
-  useEffect(() => {
-    localStorage.setItem("tasks", JSON.stringify(tasks))
-  });
-
 
   const toggleHideDone = () => {
     setHideDone(hideDone => !hideDone);
   };
 
-  const removeTask = (id) => {
-    setTasks(tasks => tasks.filter(task => task.id !== id));
-  };
-
-  const toggleTaskDone = (id) => {
-    setTasks((tasks) => tasks.map((task) => task.id === id
-      ? {
-        ...task, done:
-          !task.done
-      } : task));
-  };
-
-  const setAllDone = () => {
-    setTasks(tasks => tasks.map(task => ({
-      ...task,
-      done: true,
-    })));
-  };
-
-  const addNewTask = (content) => {
-    setTasks(tasks => [
-      ...tasks,
-      {
-        content,
-        done: false,
-        id: tasks.length
-          ? tasks[tasks.length - 1].id + 1 : 1,
-      },
-    ]);
-  };
+  const {
+    tasks,
+    removeTask,
+    toggleTaskDone,
+    setAllDone,
+    addNewTask,
+  } = useTasks();
 
   return (
-      <Container>
-        <Header title="Lista zadań" />
-        <Section
-          title="Dodaj nowe zadanie"
-          body={<Form addNewTask={addNewTask} />}
-        />
+    <Container>
+      <Header title="Lista zadań" />
+      <Section
+        title="Dodaj nowe zadanie"
+        body={<Form addNewTask={addNewTask} />}
+      />
 
-        <Section
-          title="Lista zadań"
-          body={
-            <Tasks
-              tasks={tasks}
-              hideDone={hideDone}
-              removeTask={removeTask}
-              toggleTaskDone={toggleTaskDone}
-            />
-          }
-          extraHeaderContent=
-          {<Buttons
+      <Section
+        title="Lista zadań"
+        body={
+          <Tasks
             tasks={tasks}
             hideDone={hideDone}
-            toggleHideDone={toggleHideDone}
-            setAllDone={setAllDone}
+            removeTask={removeTask}
+            toggleTaskDone={toggleTaskDone}
           />
-          }
+        }
+        extraHeaderContent=
+        {<Buttons
+          tasks={tasks}
+          hideDone={hideDone}
+          toggleHideDone={toggleHideDone}
+          setAllDone={setAllDone}
         />
-      </Container>
+        }
+      />
+    </Container>
   );
 }
 
