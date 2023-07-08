@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const ListForm = styled.form`
+export const StyledForm = styled.form`
     min-width: 200px;
     display: grid;
     grid-template-columns: 1fr auto;

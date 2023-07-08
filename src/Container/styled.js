@@ -1,5 +1,5 @@
 import styled from "styled-components"
 
-export const ListContainer = styled.main`
+export const StyledContainer = styled.main`
     padding: 20px;
 `;

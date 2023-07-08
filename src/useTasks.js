@@ -40,6 +40,12 @@ export const useTasks = () => {
         ]);
     };
 
+    const [hideDone, setHideDone] = useState(false)
+
+    const toggleHideDone = () => {
+      setHideDone(hideDone => !hideDone);
+    };
+
     return {
         tasks,
         setTasks,
@@ -47,5 +53,7 @@ export const useTasks = () => {
         toggleTaskDone,
         setAllDone,
         addNewTask,
+        toggleHideDone,
+        hideDone,
     };
 };
