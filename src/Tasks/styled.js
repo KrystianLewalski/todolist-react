@@ -30,36 +30,35 @@ export const Button = styled.button`
     padding: 7px;
     height: 30px;
     width: 30px;
-    background: hsl(103, 100%, 25%);
-    color: hsl(0, 0%, 100%);
+    color: ${({ theme }) => theme.colors.white};
     border: none;
     cursor: pointer;
 `;
 
 export const ToogleDoneButton = styled(Button)`
-background: hsl(120, 61%, 34%);
+    background: ${({ theme }) => theme.colors.green};
 
-&:hover {
-    background: hsl(103, 100%, 30%);
+    &:hover {
+    background: ${({ theme }) => theme.colors.hoverGreen};
     transition: 0.5s;
-}
+    }
 
-&:active {
-    background: hsl(103, 100%, 35%);
+    &:active {
+    background: ${({ theme }) => theme.colors.activeGreen};
     transition: 0.5s;
-}
+    }
 `;
 
 export const RemoveButton = styled(Button)`
     padding: 5.5px 5px 5px 4px;
-    background-color: hsl(0, 100%, 50%);
+    background-color: ${({ theme }) => theme.colors.red};
     &:hover {
-        background-color: hsl(0, 100%, 60%);
+        background-color: ${({ theme }) => theme.colors.hoverRed};
         transition: 0.5s;
     }
 
     &:active {
-        background-color: hsl(0, 100%, 65%);
+        background-color: ${({ theme }) => theme.colors.activeRed};
         transition: 0.5s;
     }
 `;

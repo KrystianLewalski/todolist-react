@@ -5,26 +5,26 @@ export const ListButton = styled.button`
     grid-template-columns: auto auto;
     border: none;
     background-color: inherit;
-    color: hsl(180, 100%, 25%);
+    color: ${({ theme }) => theme.colors.teal};
     margin-top: 15px;
     cursor: pointer;
 
     &:hover {
-        color: hsl(180, 100%, 30%);
+        color: ${({theme}) => theme.colors.hoverTeal};
         transition: 0.5s;
     }
 
     &:active {
-        color: hsl(180, 100%, 35%);
+        color: ${({theme}) => theme.colors.activeTeal};
         transition: 0.5s;
     }
 
     &:disabled {
-        color: hsl(0, 0%, 50%);
+        color: ${({theme}) => theme.colors.grey};
         transition: 0.5s;
     }
 
-    @media (max-width:767px) {
+    @media (max-width:${({theme}) => theme.breakpoints.mobile}px) {
         grid-template-columns: 1fr;
     }
 `;

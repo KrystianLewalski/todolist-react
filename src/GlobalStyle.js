@@ -15,6 +15,6 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0 auto;
         font-family: 'Open Sans', sans-serif;
         word-break: break-word;
-        background-color: hsl(0, 0%, 93%);
+        background-color: ${({theme}) => theme.colors.lightGrey};
     }
 `;

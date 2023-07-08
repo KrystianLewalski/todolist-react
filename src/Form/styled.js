@@ -8,7 +8,7 @@ export const StyledForm = styled.form`
     padding: 20px;
     margin-top: 15px;
 
-    @media (max-width: 767px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
         grid-template-columns: 1fr;
     } 
 `;
@@ -21,21 +21,21 @@ export const Input = styled.input`
 `;
 
 export const Button = styled.button`
-    background-color: hsl(180, 100%, 25%);
-    color: hsl(0, 0%, 100%);
+    background-color: ${({ theme }) => theme.colors.teal};
+    color: ${({theme}) => theme.colors.white};
     padding: 5px;
     border: none;
     cursor: pointer;
 
     &:hover {
-        background-color: hsl(180, 100%, 30%);
+        background-color: ${({theme}) => theme.colors.hoverTeal};
         transition: 0.5s;
-        transform: scale(1.2);
+        transform: scale(1.05);
     }
 
     &:active {
-        background-color: hsl(180, 100%, 35%);
+        background-color: ${({theme}) => theme.colors.activeTeal};
         transition: 0.5s;
-        transform: scale(1.3);
+        transform: scale(1.08);
     }
 `;
