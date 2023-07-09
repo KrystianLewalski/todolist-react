@@ -7,7 +7,7 @@ This app will help you organise your every day.
 https://krystianlewalski.github.io/todolist-react/
 
 ## Technology
-To create i used HTML, CSS, JavaScript, BEM and React.
+To create i used HTML, CSS, JavaScript, BEM, React, Custom hooks and Styled Components.
 
 # Getting Started with Create React App
 
