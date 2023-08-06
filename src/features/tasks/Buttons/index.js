@@ -1,20 +1,34 @@
 import { ListButton } from "./styled";
 import { useSelector, useDispatch } from "react-redux";
-import { selectTasks, toggleHideDone, setAllDone } from "../taskSlice";
+import {
+    selectHideDone,
+    toggleHideDone,
+    setAllDone,
+    fetchExampleTasks,
+    selectAreTasksEmpty,
+    selectIsEveryTaskDone
+} from "../taskSlice";
 
 const Buttons = () => {
-    const { tasks, hideDone } = useSelector(selectTasks);
+    const areTasksEmpty = useSelector(selectAreTasksEmpty);
+    const isEveryTaskDone = useSelector(selectIsEveryTaskDone);
+    const hideDone = useSelector(selectHideDone);
+
     const dispatch = useDispatch();
+    
     return (
         <ListButton>
-            {tasks.length > 0 && (
+            <ListButton onClick={() => dispatch(fetchExampleTasks())}>
+                Pobierz przykładowe zadania
+            </ListButton>
+            {!areTasksEmpty && (
                 <>
                     <ListButton onClick={() => dispatch(toggleHideDone())}>
                         {hideDone ? "Pokaż" : "Ukryj"} ukończone
                     </ListButton>
                     <ListButton
                         onClick={() => dispatch(setAllDone())}
-                        disabled={tasks.every(({ done }) => done)}
+                        disabled={isEveryTaskDone}
                     >
                         Ukończ wszystkie
                     </ListButton>

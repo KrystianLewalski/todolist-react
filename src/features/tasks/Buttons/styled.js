@@ -1,8 +1,7 @@
 import styled from "styled-components"
 
 export const ListButton = styled.button`
-    display: grid;
-    grid-template-columns: auto auto;
+    display: flex;
     border: none;
     background-color: inherit;
     color: ${({ theme }) => theme.colors.teal};

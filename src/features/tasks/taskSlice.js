@@ -1,34 +1,56 @@
 import { createSlice } from "@reduxjs/toolkit";
+import  getTasksFromLocalStorage  from "./tasksLocalStorage";
 
 const taskSlice = createSlice({
     name: "tasks",
     initialState: {
-        tasks: [],
+        tasks: getTasksFromLocalStorage(),
         hideDone: false,
     },
     reducers: {
-        addTask: ({ tasks }, { payload }) => {
-            tasks.push(payload);
+        addTask: ({ tasks }, { payload: task }) => {
+            tasks.push(task);
         },
         toggleHideDone: state => {
             state.hideDone = !state.hideDone;
         },
-        toogleTaskDone: ({ tasks }, { payload }) => {
+        toogleTaskDone: ({ tasks }, { payload: taskId }) => {
             const index = tasks.findIndex
-                (({ id }) => id === payload);
+                (({ id }) => id === taskId);
             tasks[index].done = !tasks[index].done;
         },
-        removeTask: ({ tasks }, { payload }) => {
+        removeTask: ({ tasks }, { payload: taskId }) => {
             const index = tasks.indexOf
-                (({ id }) => id === payload);
+                (({ id }) => id === taskId);
             tasks.splice(index);
         },
         setAllDone: ({ tasks }) => {
-            tasks.map((task) => (task.done = true));
+            tasks.forEach((task) =>
+                (task.done = true));
+        },
+        fetchExampleTasks: () => { },
+        setTasks: (state, { payload: tasks }) => {
+            state.tasks = tasks;
         },
     },
 });
 
-export const { addTask, removeTask, toggleHideDone, toogleTaskDone, setAllDone } = taskSlice.actions;
-export const selectTasks = state => state.tasks;
+export const
+    {
+        addTask,
+        removeTask,
+        toggleHideDone,
+        toogleTaskDone,
+        setAllDone,
+        fetchExampleTasks,
+        setTasks,
+    } = taskSlice.actions;
+
+const selectTasksState = state => state.tasks;
+
+export const selectTasks = state => selectTasksState(state).tasks;
+export const selectHideDone = state => selectTasksState(state).hideDone;
+export const selectAreTasksEmpty = state => selectTasks(state).length === 0;
+export const selectIsEveryTaskDone = state => selectTasks(state).every(({ done }) => done);
+
 export default taskSlice.reducer;
