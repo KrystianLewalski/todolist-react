@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const ListButton = styled.button`
-    display: flex;
+    display: grid;
     border: none;
     background-color: inherit;
     color: ${({ theme }) => theme.colors.teal};
