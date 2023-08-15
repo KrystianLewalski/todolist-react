@@ -1,4 +1,4 @@
-import { ListButton } from "./styled";
+import { ListButton } from "../../../../styled";
 import { useSelector, useDispatch } from "react-redux";
 import {
     selectHideDone,
@@ -18,9 +18,6 @@ const Buttons = () => {
     
     return (
         <ListButton>
-            <ListButton onClick={() => dispatch(fetchExampleTasks())}>
-                Pobierz przykładowe zadania
-            </ListButton>
             {!areTasksEmpty && (
                 <>
                     <ListButton onClick={() => dispatch(toggleHideDone())}>

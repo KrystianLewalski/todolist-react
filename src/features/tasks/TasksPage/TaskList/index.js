@@ -1,8 +1,8 @@
 import { toogleTaskDone, removeTask, selectHideDone, selectTasksByQuery } from "../../taskSlice";
 import searchQueryParamName from "../searchQueryParamName";
-import { StyledList, StyledItem, Content, ToogleDoneButton, RemoveButton } from "./styled";
+import { StyledList, StyledItem, Content, ToogleDoneButton, RemoveButton, ContentLink } from "./styled";
 import { useSelector, useDispatch } from "react-redux";
-import { Link, useLocation } from "react-router-dom"
+import { useLocation } from "react-router-dom"
 
 const TaskList = () => {
     const location = useLocation();
@@ -25,7 +25,9 @@ const TaskList = () => {
                         {task.done ? "🗸" : ""}
                     </ToogleDoneButton>
                     <Content done={task.done}>
-                        <Link to={`/zadania/${task.id}`}>{task.content}</Link>
+                        <ContentLink to={`/zadania/${task.id}`}>
+                            {task.content}
+                        </ContentLink>
                     </Content>
                     <RemoveButton
                         onClick={() => dispatch(removeTask(task.id))}

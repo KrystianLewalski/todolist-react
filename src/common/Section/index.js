@@ -8,6 +8,7 @@ const Section = ({ title, body, extraHeaderContent }) => (
             </StyledTitle>
             {extraHeaderContent}
         </StyledHeader>
+        
         {body}
     </StyledSection>
 );
