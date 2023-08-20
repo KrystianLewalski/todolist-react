@@ -8,9 +8,9 @@ export default () => (
         <Section
             title="Krystian Lewalski"
             body={
-                <>Brałem udział w kursie Frontend Developer od podstaw,
-                    organizowanym przez YouCode.
-                    Chciałbym stale rozwijać się w technologii React. </>
+                <>Uwielbiam grać w różnego rodzaju gry. Interesuję się także 
+                mechaniką oraz historią. Od końca poprzedniego roku do tego małego 
+                grona dołączyło programowanie. </>
             }
         />
     </Container>
