@@ -7,6 +7,8 @@ export const ListButton = styled.button`
     color: ${({ theme }) => theme.colors.teal};
     margin-top: 15px;
     cursor: pointer;
+    grid-template-columns: inherit;
+
 
     &:hover {
         color: ${({theme}) => theme.colors.hoverTeal};
@@ -24,6 +26,5 @@ export const ListButton = styled.button`
     }
 
     @media (max-width:${({theme}) => theme.breakpoints.mobile}px) {
-        grid-template-columns: 1fr;
     }
 `;

@@ -16,6 +16,7 @@ export const Button = styled.button`
     border: none;
     cursor: pointer;
     margin: 10px;
+    padding: 5px;
 
     &:hover {
         background-color: ${({theme}) => theme.colors.hoverTeal};
